@@ -1,0 +1,11 @@
+[Unit]
+Description=MatlabFlexLM
+
+[Service]
+User=CHANGE_ME
+RemainAfterExit=True
+ExecStart=/usr/local/MATLAB/R2016b/etc/lmstart
+ExecStop=/usr/local/MATLAB/R2016b/etc/lmdown
+
+[Install]
+WantedBy=multi-user.target
