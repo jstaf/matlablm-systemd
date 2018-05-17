@@ -1,0 +1,14 @@
+[Unit]
+Description=Matlab MDCE service
+After=multi-user.target
+Before=matlab-dcs-worker.service
+
+[Service]
+Type=forking
+RemainAfterExit=True
+ExecStart=/path/to/matlab/toolbox/distcomp/bin/mdce start
+ExecStop=/path/to/matlab/toolbox/distcomp/bin/mdce stop
+TimeoutSec=0
+
+[Install]
+WantedBy=multi-user.target

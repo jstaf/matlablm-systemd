@@ -1,0 +1,14 @@
+[Unit]
+Description=Matlab DCS worker service
+After=multi-user.target
+After=matlab-dcs-mdce.service
+
+[Service]
+Type=forking
+RemainAfterExit=True
+ExecStart=/path/to/matlab/2011a/toolbox/distcomp/bin/startworker -v -jobmanagerhost headnode -jobmanager default_jobmanager
+ExecStop=/storage/cluster/versatushpc/softwares/matlab/2011a/toolbox/distcomp/bin/stopworker -v
+TimeoutSec=0
+
+[Install]
+WantedBy=multi-user.target
