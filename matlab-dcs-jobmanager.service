@@ -1,0 +1,14 @@
+[Unit]
+Description=Matlab DCS Job Manager
+After=multi-user.target
+After=matlab-dcs-mdce.service
+
+[Service]
+Type=forking
+RemainAfterExit=True
+ExecStart=/path/to/matlab/toolbox/distcomp/bin/startjobmanager
+ExecStop=/path/to/matlab/toolbox/distcomp/bin/stopjobmanager
+TimeoutSec=0
+
+[Install]
+WantedBy=multi-user.target
