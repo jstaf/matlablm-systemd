@@ -6,6 +6,8 @@ User=CHANGE_ME
 RemainAfterExit=True
 ExecStart=/usr/local/MATLAB/R2016b/etc/lmstart
 ExecStop=/usr/local/MATLAB/R2016b/etc/lmdown
+Restart=on-failure
+RestartSec=30
 
 [Install]
 WantedBy=multi-user.target
