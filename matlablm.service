@@ -1,5 +1,7 @@
 [Unit]
 Description=MatlabFlexLM
+Documentation=https://github.com/jstaf/matlablm-systemd
+After=network.target
 
 [Service]
 User=CHANGE_ME
