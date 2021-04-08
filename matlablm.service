@@ -1,13 +1,15 @@
 [Unit]
 Description=MatlabFlexLM
+Documentation=https://github.com/jstaf/matlablm-systemd
+After=network.target
 
 [Service]
 User=CHANGE_ME
-RemainAfterExit=True
-ExecStart=/usr/local/MATLAB/R2016b/etc/lmstart
-ExecStop=/usr/local/MATLAB/R2016b/etc/lmdown
+Type=forking
 Restart=on-failure
 RestartSec=30
+ExecStart=/usr/local/MATLAB/R2021a/etc/lmstart
+ExecStop=/usr/local/MATLAB/R2021a/etc/lmdown
 
 [Install]
 WantedBy=multi-user.target
