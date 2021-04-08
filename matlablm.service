@@ -5,9 +5,11 @@ After=network.target
 
 [Service]
 User=CHANGE_ME
+Type=forking
+Restart=on-failure
+RestartSec=30
 ExecStart=/usr/local/MATLAB/R2021a/etc/lmstart
 ExecStop=/usr/local/MATLAB/R2021a/etc/lmdown
-Type=forking
 
 [Install]
 WantedBy=multi-user.target
